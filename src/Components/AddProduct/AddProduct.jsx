@@ -21,7 +21,15 @@ const AddProduct = () => {
   }
 
   const Add_Product= async ()=>{
-    console.log(productDetails);
+    if (!image) {
+      alert("Please select an image first!");
+      return;
+    }
+
+    console.log("Product details:", productDetails);
+
+
+    // console.log(productDetails);
     let responseData;
     let product= productDetails;
     let formData= new FormData();
@@ -29,9 +37,9 @@ const AddProduct = () => {
     await fetch('https://my-ecom-backend.onrender.com/upload',{
       method: 'POST',
       headers:{
-        Accept: 'application/json'
-      },
-      body: formData
+        Accept: 'application/json',
+        body: formData
+      }
       
     }).then((resp)=>resp.json()).then((data)=>{responseData= data});
     
