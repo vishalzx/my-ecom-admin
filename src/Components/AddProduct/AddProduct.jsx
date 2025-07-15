@@ -42,9 +42,6 @@ const AddProduct = () => {
       body: formData
       
     }).then((resp)=>resp.json()).then((data)=>{responseData= data});
-    console.log(responseData);
-    console.log(image);
-    console.log(responseData.image_url);
   
     if(responseData.success){
       product.image= responseData.image_url;
