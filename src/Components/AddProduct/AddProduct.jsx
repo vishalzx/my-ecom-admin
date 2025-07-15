@@ -26,7 +26,7 @@ const AddProduct = () => {
       return;
     }
 
-    console.log("Product details:", productDetails);
+    // console.log("Product details:", productDetails);
 
 
     // console.log(productDetails);
@@ -42,6 +42,7 @@ const AddProduct = () => {
       body: formData
       
     }).then((resp)=>resp.json()).then((data)=>{responseData= data});
+    console.log(responseData);
     console.log(image);
     console.log(responseData.image_url);
   
@@ -91,7 +92,7 @@ const AddProduct = () => {
         </label>
         <input onChange={imageHandler} type="file" name='image' id='file-input' hidden/>
       </div>
-      <button onClick={AddProduct} className='addproduct-btn'>ADD</button>
+      <button onClick={Add_Product} className='addproduct-btn'>ADD</button>
     </div>
   )
 }
