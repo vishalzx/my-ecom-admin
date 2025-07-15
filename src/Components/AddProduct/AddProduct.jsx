@@ -37,9 +37,9 @@ const AddProduct = () => {
     await fetch('https://my-ecom-backend.onrender.com/upload',{
       method: 'POST',
       headers:{
-        Accept: 'application/json',
-        body: formData
-      }
+        Accept: 'application/json'
+      },
+      body: formData
       
     }).then((resp)=>resp.json()).then((data)=>{responseData= data});
     console.log(image);
@@ -91,7 +91,7 @@ const AddProduct = () => {
         </label>
         <input onChange={imageHandler} type="file" name='image' id='file-input' hidden/>
       </div>
-      <button onClick={Add_Product} className='addproduct-btn'>ADD</button>
+      <button onClick={AddProduct} className='addproduct-btn'>ADD</button>
     </div>
   )
 }
